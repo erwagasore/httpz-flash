@@ -32,6 +32,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/).
 .gitignore        — Zig build artefact ignores
 README.md         — Project overview and quickstart
 AGENTS.md         — Operating rules for humans + AI
+DESIGN.md         — Architecture and implementation design
 LICENSE           — Licence terms
 docs/             — Project documentation
   index.md        — Documentation index
@@ -51,6 +52,6 @@ docs/             — Project documentation
 
 ## Orientation
 
-- **Entry point**: `src/` (once created) — the middleware library source.
-- **Domain**: Flash middleware for the httpz Zig HTTP server framework.
-- **Stack**: Zig, httpz.
+- **Entry point**: `src/` (once created) — the middleware library source. See `DESIGN.md` for planned file layout.
+- **Domain**: Cookie-based flash messages (one-time notifications between HTTP requests) for the httpz Zig HTTP server framework. Includes an `HX-Trigger` helper for HTMX partial swaps.
+- **Stack**: Zig, httpz. No external dependencies beyond httpz.
